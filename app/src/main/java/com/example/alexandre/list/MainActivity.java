@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
+
     private void bindViews() {
         mBtMap = (Button) findViewById(R.id.btMap);
         mBtTreeList = (Button) findViewById(R.id.btTree);
