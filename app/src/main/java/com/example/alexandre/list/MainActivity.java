@@ -26,7 +26,7 @@ import android.widget.Toast;
 import com.example.alexandre.list.fragments.MapFragment;
 import com.example.alexandre.list.fragments.TreeListFragment;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, TreeListFragment.OnTreeListClickListener, MapFragment.OnMapClickListener, AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, TreeListFragment.OnTreeListClickListener, MapFragment.OnMapClickListener{
 
     private static final String TAG = "MainActivity";
 
@@ -129,17 +129,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.e(TAG, "onMapClick: click !");
     }
 
-
-    //-------------------------------------POUR FILTRE----------------------------------------------
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-        String sSelected=adapterView.getItemAtPosition(position).toString();
-        Toast.makeText(this, sSelected, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
-    //----------------------------------------------------------------------------------------------
 }
