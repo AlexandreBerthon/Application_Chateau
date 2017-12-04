@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">List</string>
+    <string name="map">Carte</string>
+    <string name="tree_list">Liste des arbres</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/section1"
+        android:title="Ma section"
+        android:icon="@drawable/ic_translate_black_24dp">
+    </item>
+
+    <item
+        android:id="@+id/section2"
+        android:title="Ma section 2"
+        android:icon="@drawable/ic_translate_black_24dp">
+    </item>
+
+    <item
+        android:id="@+id/section3"
+        android:title="Ma section 3"
+        android:icon="@drawable/ic_translate_black_24dp">
+    </item>
+
+
+</menu>
