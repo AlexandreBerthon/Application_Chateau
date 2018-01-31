@@ -128,9 +128,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mGoogleMap = googleMap;
 
         // Add a marker in Sydney, Australia, and move the camera.
-        LatLng libertyPos = new LatLng(40.689247, -74.044502);
-        CameraPosition liberty = CameraPosition.builder().target(libertyPos).zoom(16).bearing(0).tilt(45).build();
-        mGoogleMap.addMarker(new MarkerOptions().position(libertyPos).title("Statue de la liberté").snippet("Mon objectif"));
+        LatLng castlePos = new LatLng(45.209299, 5.659144);
+        LatLng treePos = new LatLng(45.210378, 5.658969);
+        CameraPosition liberty = CameraPosition.builder().target(castlePos).zoom(17)/*.bearing(0).tilt(0)*/.build();
+        mGoogleMap.addMarker(new MarkerOptions().position(treePos).title("Cèdre du Liban").snippet("Libani"));
         mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(liberty));
     }
 
