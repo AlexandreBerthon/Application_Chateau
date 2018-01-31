@@ -25,6 +25,11 @@ import android.widget.Toast;
 
 import com.example.alexandre.list.fragments.MapFragment;
 import com.example.alexandre.list.fragments.TreeListFragment;
+import com.example.alexandre.list.helper.databasehelper;
+import com.example.alexandre.list.model.autre_element;
+import com.example.alexandre.list.model.lieu;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, TreeListFragment.OnTreeListClickListener, MapFragment.OnMapClickListener{
 
@@ -38,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ActionBarDrawerToggle abdt;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToogle;
+    databasehelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +65,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mToogle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //------------------------------------------------------------------------------------------
+
+        //-------------------------------------INSTANCES--------------------------------------------
+
+        db = new databasehelper(getApplicationContext());
+
+        //------------------------------------------------------------------------------------------
+        lieu lieu1 = new lieu(1,"Jardin Anglais");
+        lieu lieu2 = new lieu(2,"Cour du château");
+
+        long lieu1_id = db.createLieu(lieu1);
+        long lieu2_id = db.createLieu(lieu2);
+
+        Log.d("Compteur de lieux", "Lieux: " + db.getAllLieu().size());
+
+        autre_element ae1 = new autre_element(1, "Bob", "Moche", "C'est doux et moelleux");
+        autre_element ae2 = new autre_element(2, "John", "Beau", "Ca pue grave");
+
+        long ae2_id = db.createAutreElement(ae1);
+        long ae3_id = db.createAutreElement(ae2);
+        long ae4_id = 6; //= db.createAutreElement(ae2);
+        long ae5_id = 5; //= db.createAutreElement(ae2);
+        long ae6_id = 4; //= db.createAutreElement(ae2);
+        long ae7_id = 3; //= db.createAutreElement(ae2);
+        long ae8_id = 9; //= db.createAutreElement(ae2);
+
+        Log.d("Compteur d'a_e", "Compteur: " + db.getAllautreElements().size());
+
+        List<lieu> allLieux = db.getAllLieu();
+        for (lieu lieu : allLieux) {
+            Log.d("ID","Value: " + lieu.getId_lieu());
+            Log.d("Nom du lieu", lieu.getLibelle_lieu());
+        }
+
+        List<autre_element> allAe = db.getAllautreElements();
+        for(autre_element ae : allAe) {
+            Log.d("ID ae", "val: "+ae.getId_autre_element());
+            Log.d("ID Lieu", "val: " + ae.getId_lieu());
+            Log.d("Nom ae", ae.getNom_atre_element());
+            Log.d("Description", ae.getDescription_autre_element());
+            Log.d("Vue", ae.getVue_sur_autre_element());
+        }
+
+
+        db.closeDB();
     }
 
 
