@@ -16,6 +16,7 @@ import com.example.alexandre.list.model.element_photographique;
 import com.example.alexandre.list.model.feuillage;
 import com.example.alexandre.list.model.genre;
 import com.example.alexandre.list.model.lieu;
+import com.example.alexandre.list.model.nom;
 
 /**
  * Created by simon on 18/12/2017.
@@ -577,7 +578,6 @@ public class databasehelper extends SQLiteOpenHelper{
     }
 
     //Create Feuillage
-
     public long createFeuillage(feuillage feuillage) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -621,6 +621,29 @@ public class databasehelper extends SQLiteOpenHelper{
 
 
         return genre_id;
+    }
+
+    //Create Nom
+    public long createNom(nom nom) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_LIBELLE_NOM, nom.getLibelle_nom());
+
+        long nom_id=0;
+
+        db.beginTransaction();
+        try {
+            nom_id = db.insertOrThrow(TABLE_NOM, null, values);
+            db.setTransactionSuccessful();
+        } catch (Exception e) {
+            Log.e(LOG, e.getMessage());
+        } finally {
+            db.endTransaction();
+        }
+
+
+        return nom_id;
     }
 
     public void closeDB() {

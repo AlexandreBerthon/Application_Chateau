@@ -30,6 +30,7 @@ import com.example.alexandre.list.model.autre_element;
 import com.example.alexandre.list.model.feuillage;
 import com.example.alexandre.list.model.genre;
 import com.example.alexandre.list.model.lieu;
+import com.example.alexandre.list.model.nom;
 
 import java.util.List;
 
@@ -155,6 +156,72 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         long genre8_id = db.createGenre(genre8);
         long genre9_id = db.createGenre(genre9);
         long genre10_id = db.createGenre(genre10);
+
+        nom nom1 = new nom(1, "sempervirens");
+        nom nom2 = new nom(2, "acerifolia");
+        nom nom3 = new nom(3, "typhina");
+        nom nom4 = new nom(4, "orientalis");
+        nom nom5 = new nom(5, "baccata");
+        nom nom6 = new nom(6, "aquifolium");
+        nom nom7 = new nom(7, "hippocastanum");
+        nom nom8 = new nom(8, "nigra");
+        nom nom9 = new nom(9, "libani");
+        nom nom10 = new nom(10, "carpinifolia");
+        nom nom11 = new nom(11, "laurocerasus");
+        nom nom12 = new nom(12, "pseudoplatanus");
+        nom nom13 = new nom(13, "umbellata");
+        nom nom14 = new nom(14, "autralis");
+        nom nom15 = new nom(15, "excelsior");
+        nom nom16 = new nom(16, "japonica");
+        nom nom17 = new nom(17, "sylvatica");
+        nom nom18 = new nom(18, "babylonica");
+        nom nom19 = new nom(19, "ilex");
+        nom nom20 = new nom(20, "persica");
+        nom nom21 = new nom(21, "atlantica");
+        nom nom22 = new nom(22, "sylvatica  Atropurpurea");
+        nom nom23 = new nom(23, "rubrum");
+        nom nom24 = new nom(24, "grandiflora");
+        nom nom25 = new nom(25, "orientalis");
+        nom nom26 = new nom(26, "deodara");
+        nom nom27 = new nom(27, "hippocastanum");
+        nom nom28 = new nom(28, "platanoïdes");
+        nom nom29 = new nom(29, "pseudoplatanus");
+        nom nom30 = new nom(30, "autralis");
+
+
+
+        long nom1_id = db.createNom(nom1);
+        long nom2_id = db.createNom(nom2);
+        long nom3_id = db.createNom(nom3);
+        long nom4_id = db.createNom(nom4);
+        long nom5_id = db.createNom(nom5);
+        long nom6_id = db.createNom(nom6);
+        long nom7_id = db.createNom(nom7);
+        long nom8_id = db.createNom(nom8);
+        long nom9_id = db.createNom(nom9);
+        long nom10_id = db.createNom(nom10);
+        long nom11_id = db.createNom(nom11);
+        long nom12_id = db.createNom(nom12);
+        long nom13_id = db.createNom(nom13);
+        long nom14_id = db.createNom(nom14);
+        long nom15_id = db.createNom(nom15);
+        long nom16_id = db.createNom(nom16);
+        long nom17_id = db.createNom(nom17);
+        long nom18_id = db.createNom(nom18);
+        long nom19_id = db.createNom(nom19);
+        long nom20_id = db.createNom(nom20);
+        long nom21_id = db.createNom(nom21);
+        long nom22_id = db.createNom(nom22);
+        long nom23_id = db.createNom(nom23);
+        long nom24_id = db.createNom(nom24);
+        long nom25_id = db.createNom(nom25);
+        long nom26_id = db.createNom(nom26);
+        long nom27_id = db.createNom(nom27);
+        long nom28_id = db.createNom(nom28);
+        long nom29_id = db.createNom(nom29);
+        long nom30_id = db.createNom(nom30);
+
+
 
 
         autre_element ae1 = new autre_element(1, "Bob", "Moche", "C'est doux et moelleux");
