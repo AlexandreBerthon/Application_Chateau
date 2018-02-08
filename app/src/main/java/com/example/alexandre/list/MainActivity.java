@@ -27,6 +27,8 @@ import com.example.alexandre.list.fragments.MapFragment;
 import com.example.alexandre.list.fragments.TreeListFragment;
 import com.example.alexandre.list.helper.databasehelper;
 import com.example.alexandre.list.model.autre_element;
+import com.example.alexandre.list.model.feuillage;
+import com.example.alexandre.list.model.genre;
 import com.example.alexandre.list.model.lieu;
 
 import java.util.List;
@@ -70,14 +72,90 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         db = new databasehelper(getApplicationContext());
 
-        //------------------------------------------------------------------------------------------
-        lieu lieu1 = new lieu(1,"Jardin Anglais");
-        lieu lieu2 = new lieu(2,"Cour du château");
+        lieu lieu1 = new lieu(1,"Cour d'honneur");
+        lieu lieu2 = new lieu(2,"Jardin anglais");
+        lieu lieu3 = new lieu(3,"Forêt et clairière");
+        lieu lieu4 = new lieu(4,"Côté sud");
+        lieu lieu5 = new lieu(5,"Bosquet du couchant");
+        lieu lieu6 = new lieu(6,"Ile");
+        lieu lieu7 = new lieu(7,"Vers la chapelle");
+        lieu lieu8 = new lieu(8,"Jardin anglais terrasse");
+        lieu lieu9 = new lieu(9,"Jardin anglais haut");
+        lieu lieu10 = new lieu(10,"Captage d'eau");
+        lieu lieu11 = new lieu(11,"Forêt");
+        lieu lieu12 = new lieu(12,"Promenade du couchant");
+        lieu lieu13 = new lieu(13,"Prairie");
+        lieu lieu14 = new lieu(14,"Aile sud du château");
+        lieu lieu15 = new lieu(15,"Depuis la prairie");
+        lieu lieu16 = new lieu(16,"Depuis le jardin anglais");
+        lieu lieu17 = new lieu(17,"Depuis les noyers");
+        lieu lieu18 = new lieu(18,"Depuis la forêt");
+        lieu lieu19 = new lieu(19,"Depuis l'ex souche du cedre");
+        lieu lieu20 = new lieu(20,"Depuis l'érable boulle");
 
         long lieu1_id = db.createLieu(lieu1);
         long lieu2_id = db.createLieu(lieu2);
+        long lieu3_id = db.createLieu(lieu3);
+        long lieu4_id = db.createLieu(lieu4);
+        long lieu5_id = db.createLieu(lieu5);
+        long lieu6_id = db.createLieu(lieu6);
+        long lieu7_id = db.createLieu(lieu7);
+        long lieu8_id = db.createLieu(lieu8);
+        long lieu9_id = db.createLieu(lieu9);
+        long lieu10_id = db.createLieu(lieu10);
+        long lieu11_id = db.createLieu(lieu11);
+        long lieu12_id = db.createLieu(lieu12);
+        long lieu13_id = db.createLieu(lieu13);
+        long lieu14_id = db.createLieu(lieu14);
+        long lieu15_id = db.createLieu(lieu15);
+        long lieu16_id = db.createLieu(lieu16);
+        long lieu17_id = db.createLieu(lieu17);
+        long lieu18_id = db.createLieu(lieu18);
+        long lieu19_id = db.createLieu(lieu19);
+        long lieu20_id = db.createLieu(lieu20);
 
         Log.d("Compteur de lieux", "Lieux: " + db.getAllLieu().size());
+
+
+        feuillage feuillage1 = new feuillage(1,"Persistant");
+        feuillage feuillage2 = new feuillage(2,"Caduc");
+        feuillage feuillage3 = new feuillage(3,"Conifère");
+
+        long feuillage1_id = db.createFeuillage(feuillage1);
+        long feuillage2_id = db.createFeuillage(feuillage2);
+        long feuillage3_id = db.createFeuillage(feuillage3);
+
+        genre genre1 = new genre(1, "Buxus");
+        genre genre2 = new genre(2, "Platanus");
+        genre genre3 = new genre(3, "Rhus");
+        genre genre4 = new genre(4, "Taxus");
+        genre genre5 = new genre(5, "Ilex");
+        genre genre6 = new genre(6, "Aesculus");
+        genre genre7 = new genre(7, "Juglans");
+        genre genre8 = new genre(8, "Cedrus");
+        genre genre9 = new genre(9, "Ulmus");
+        genre genre10 = new genre(10, "Prunus");
+        genre genre11 = new genre(11, "Acer");
+        genre genre12 = new genre(12, "Elaeagnus");
+        genre genre13 = new genre(13, "Celtis");
+        genre genre14 = new genre(14, "Fraxinus");
+        genre genre15 = new genre(15, "Sophora");
+        genre genre16 = new genre(16, "Fagus");
+        genre genre17 = new genre(17, "Salix");
+        genre genre18 = new genre(18, "Quercus");
+        genre genre19 = new genre(19, "Parrotia");
+
+        long genre1_id = db.createGenre(genre1);
+        long genre2_id = db.createGenre(genre2);
+        long genre3_id = db.createGenre(genre3);
+        long genre4_id = db.createGenre(genre4);
+        long genre5_id = db.createGenre(genre5);
+        long genre6_id = db.createGenre(genre6);
+        long genre7_id = db.createGenre(genre7);
+        long genre8_id = db.createGenre(genre8);
+        long genre9_id = db.createGenre(genre9);
+        long genre10_id = db.createGenre(genre10);
+
 
         autre_element ae1 = new autre_element(1, "Bob", "Moche", "C'est doux et moelleux");
         autre_element ae2 = new autre_element(2, "John", "Beau", "Ca pue grave");
@@ -109,6 +187,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         db.closeDB();
+
+        //------------------------------------------------------------------------------------------
     }
 
 

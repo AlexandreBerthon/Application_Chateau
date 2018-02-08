@@ -13,6 +13,8 @@ import java.util.List;
 import com.example.alexandre.list.model.autre_element;
 import com.example.alexandre.list.model.element_botanique;
 import com.example.alexandre.list.model.element_photographique;
+import com.example.alexandre.list.model.feuillage;
+import com.example.alexandre.list.model.genre;
 import com.example.alexandre.list.model.lieu;
 
 /**
@@ -572,6 +574,53 @@ public class databasehelper extends SQLiteOpenHelper{
             } while (cursor.moveToNext());
         }
         return Lieu;
+    }
+
+    //Create Feuillage
+
+    public long createFeuillage(feuillage feuillage) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_LIBELLE_FEUILLAGE, feuillage.getLibelle_feuillage());
+
+        long feuillage_id=0;
+
+        db.beginTransaction();
+        try {
+            feuillage_id = db.insertOrThrow(TABLE_FEUILLAGE, null, values);
+            db.setTransactionSuccessful();
+        } catch (Exception e) {
+            Log.e(LOG, e.getMessage());
+        } finally {
+            db.endTransaction();
+        }
+
+
+        return feuillage_id;
+    }
+
+    //Create Genre
+    public long createGenre(genre genre) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_LIBELLE_GENRE, genre.getLibelle_genre());
+
+        long genre_id=0;
+
+        db.beginTransaction();
+        try {
+            genre_id = db.insertOrThrow(TABLE_GENRE, null, values);
+            db.setTransactionSuccessful();
+        } catch (Exception e) {
+            Log.e(LOG, e.getMessage());
+        } finally {
+            db.endTransaction();
+        }
+
+
+        return genre_id;
     }
 
     public void closeDB() {
