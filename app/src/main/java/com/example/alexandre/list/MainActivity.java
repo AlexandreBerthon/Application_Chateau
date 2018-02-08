@@ -31,6 +31,7 @@ import com.example.alexandre.list.model.feuillage;
 import com.example.alexandre.list.model.genre;
 import com.example.alexandre.list.model.lieu;
 import com.example.alexandre.list.model.nom;
+import com.example.alexandre.list.model.nom_commun;
 
 import java.util.List;
 
@@ -221,6 +222,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         long nom29_id = db.createNom(nom29);
         long nom30_id = db.createNom(nom30);
 
+        nom_commun nom_commun1 = new nom_commun(1,"Buis");
+        nom_commun nom_commun2 = new nom_commun(2,"Tilleul");
+        nom_commun nom_commun3 = new nom_commun(3,"Platane a feuilles d érable");
+        nom_commun nom_commun4 = new nom_commun(4,"Sumac vinaigrier, sumac amaranthe, sumac de Virginie");
+        nom_commun nom_commun5 = new nom_commun(5,"Platane d'orient");
+        nom_commun nom_commun6 = new nom_commun(6,"If commun");
+        nom_commun nom_commun7 = new nom_commun(7,"Houx commun");
+        nom_commun nom_commun8 = new nom_commun(8,"Marronnier d'Inde ou commun");
+        nom_commun nom_commun9 = new nom_commun(9,"Noyer noir américan");
+        nom_commun nom_commun10 = new nom_commun(10,"Cèdre du Liban");
+        nom_commun nom_commun11 = new nom_commun(11,"Orme à feuilles de charme\n");
+        nom_commun nom_commun12 = new nom_commun(12,"Cèdre du Liban");
+        nom_commun nom_commun13 = new nom_commun(13,"Orme à feuilles de charme");
+        nom_commun nom_commun14 = new nom_commun(14,"Cèdre du Liban");
+        nom_commun nom_commun15 = new nom_commun(15,"Cèdre du Liban");
+        nom_commun nom_commun16 = new nom_commun(16,"Cèdre du Liban");
+        nom_commun nom_commun17 = new nom_commun(17,"Cèdre du Liban");
+        nom_commun nom_commun18 = new nom_commun(18,"Cèdre du Liban");
+        nom_commun nom_commun19 = new nom_commun(19,"Cèdre du Liban");
+        nom_commun nom_commun20 = new nom_commun(20,"Cèdre du Liban");
 
 
 
