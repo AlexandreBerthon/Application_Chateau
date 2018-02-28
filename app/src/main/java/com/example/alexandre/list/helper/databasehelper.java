@@ -17,6 +17,7 @@ import com.example.alexandre.list.model.feuillage;
 import com.example.alexandre.list.model.genre;
 import com.example.alexandre.list.model.lieu;
 import com.example.alexandre.list.model.nom;
+import com.example.alexandre.list.model.type_botanique;
 
 /**
  * Created by simon on 18/12/2017.
@@ -650,5 +651,28 @@ public class databasehelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getReadableDatabase();
         if (db != null && db.isOpen())
             db.close();
+    }
+
+
+    public long createType_botanique(type_botanique type_botanique) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_LIBELLE_NOM, type_botanique.getLibelle_type_botanique());
+
+        long type_botanique_id=0;
+
+        db.beginTransaction();
+        try {
+            type_botanique_id = db.insertOrThrow(TABLE_TYPE_BOTANIQUE, null, values);
+            db.setTransactionSuccessful();
+        } catch (Exception e) {
+            Log.e(LOG, e.getMessage());
+        } finally {
+            db.endTransaction();
+        }
+
+
+        return type_botanique_id;
     }
 }

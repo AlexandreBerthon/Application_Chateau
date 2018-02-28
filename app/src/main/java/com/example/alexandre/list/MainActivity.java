@@ -223,8 +223,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         type_botanique type_botanique1 = new type_botanique(1, "Arbre");
         type_botanique type_botanique2 = new type_botanique(2, "Arbuste");
 
-        //long type_botanique1_id = db.createType_botanique(type_botanique1);
-        //long type_botanique2_id = db.createType_botanique(type_botanique2);
+        long type_botanique1_id = db.createType_botanique(type_botanique1);
+        long type_botanique2_id = db.createType_botanique(type_botanique2);
 
 
 
