@@ -31,6 +31,7 @@ import com.example.alexandre.list.model.feuillage;
 import com.example.alexandre.list.model.genre;
 import com.example.alexandre.list.model.lieu;
 import com.example.alexandre.list.model.nom;
+import com.example.alexandre.list.model.type_botanique;
 
 import java.util.List;
 
@@ -188,8 +189,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nom nom29 = new nom(29, "pseudoplatanus");
         nom nom30 = new nom(30, "autralis");
 
-
-
         long nom1_id = db.createNom(nom1);
         long nom2_id = db.createNom(nom2);
         long nom3_id = db.createNom(nom3);
@@ -220,6 +219,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         long nom28_id = db.createNom(nom28);
         long nom29_id = db.createNom(nom29);
         long nom30_id = db.createNom(nom30);
+
+        type_botanique type_botanique1 = new type_botanique(1, "Arbre");
+        type_botanique type_botanique2 = new type_botanique(2, "Arbuste");
+
+        //long type_botanique1_id = db.createType_botanique(type_botanique1);
+        //long type_botanique2_id = db.createType_botanique(type_botanique2);
 
 
 
