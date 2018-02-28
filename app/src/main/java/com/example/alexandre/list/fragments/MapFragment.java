@@ -136,6 +136,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         CameraPosition liberty = CameraPosition.builder().target(castlePos).zoom(17)/*.bearing(0).tilt(0)*/.build();
         mGoogleMap.addMarker(new MarkerOptions().position(treePos).title("Test du cèdre du Liban").snippet("Libani"));
         mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(liberty));
+        mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
     }
 
     /**
