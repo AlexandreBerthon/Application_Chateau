@@ -17,6 +17,7 @@ import com.example.alexandre.list.model.feuillage;
 import com.example.alexandre.list.model.genre;
 import com.example.alexandre.list.model.lieu;
 import com.example.alexandre.list.model.nom;
+import com.example.alexandre.list.model.nom_commun;
 import com.example.alexandre.list.model.type_botanique;
 
 /**
@@ -660,7 +661,7 @@ public class databasehelper extends SQLiteOpenHelper{
         ContentValues values = new ContentValues();
         values.put(KEY_LIBELLE_NOM, type_botanique.getLibelle_type_botanique());
 
-        long type_botanique_id=1;
+        long type_botanique_id=0;
 
         db.beginTransaction();
         try {
@@ -674,5 +675,27 @@ public class databasehelper extends SQLiteOpenHelper{
 
 
         return type_botanique_id;
+    }
+
+    public long createNom_commun(nom_commun nom_commun) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_LIBELLE_NOM_COMMUN, nom_commun.getLibelle_nom_commun());
+
+        long nom_commun_id=0;
+
+        db.beginTransaction();
+        try {
+            nom_commun_id = db.insertOrThrow(TABLE_NOM_COMMUN, null, values);
+            db.setTransactionSuccessful();
+        } catch (Exception e) {
+            Log.e(LOG, e.getMessage());
+        } finally {
+            db.endTransaction();
+        }
+
+
+        return nom_commun_id;
     }
 }

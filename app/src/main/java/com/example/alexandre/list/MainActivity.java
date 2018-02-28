@@ -32,6 +32,7 @@ import com.example.alexandre.list.model.feuillage;
 import com.example.alexandre.list.model.genre;
 import com.example.alexandre.list.model.lieu;
 import com.example.alexandre.list.model.nom;
+import com.example.alexandre.list.model.nom_commun;
 import com.example.alexandre.list.model.type_botanique;
 
 import java.util.List;
@@ -225,14 +226,69 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         long nom29_id = db.createNom(nom29);
         long nom30_id = db.createNom(nom30);
 
+        nom_commun nom_commun1 = new nom_commun(1, "Buis");
+        nom_commun nom_commun2 = new nom_commun(2,"Tilleul");
+        nom_commun nom_commun3 = new nom_commun(3,"Platane à feuilles d érable");
+        nom_commun nom_commun4 = new nom_commun(4,"Sumac vinaigrier, sumac amaranthe, sumac de Virginie");
+        nom_commun nom_commun5 = new nom_commun(5,"Platane d orient");
+        nom_commun nom_commun6 = new nom_commun(6,"If commun");
+        nom_commun nom_commun7 = new nom_commun(7,"Houx commun");
+        nom_commun nom_commun8 = new nom_commun(8,"Marronnier d Inde ou commun");
+        nom_commun nom_commun9 = new nom_commun(9,"Noyer noir américan");
+        nom_commun nom_commun10 = new nom_commun(10,"Cèdre du Liban");
+        nom_commun nom_commun11 = new nom_commun(11,"Orme à feuilles de charme");
+        nom_commun nom_commun12 = new nom_commun(12,"Laurier cerise, de Trézibonde, amande");
+        nom_commun nom_commun13 = new nom_commun(13,"Erable sycomore");
+        nom_commun nom_commun14 = new nom_commun(14,"Oléastre à ombelles");
+        nom_commun nom_commun15 = new nom_commun(15,"Micocoulier de Provence");
+        nom_commun nom_commun16 = new nom_commun(16,"Frêne commun, européen");
+        nom_commun nom_commun17 = new nom_commun(17,"Sophora du Japon");
+        nom_commun nom_commun18 = new nom_commun(18,"Hêtre commun");
+        nom_commun nom_commun19 = new nom_commun(19,"Saule pleureur");
+        nom_commun nom_commun20 = new nom_commun(20,"Chêne vert");
+        nom_commun nom_commun21 = new nom_commun(21,"Parrotie de Perse, Arbre de fer ");
+        nom_commun nom_commun22 = new nom_commun(22,"Cèdre de l Atlas");
+        nom_commun nom_commun23 = new nom_commun(23,"Hêtre pourpre");
+        nom_commun nom_commun24 = new nom_commun(24,"Erable pourpre");
+        nom_commun nom_commun25 = new nom_commun(25,"Magnolia à grandes fleurs");
+        nom_commun nom_commun26 = new nom_commun(26,"Cèdre de l Himalaya");
+        nom_commun nom_commun27 = new nom_commun(27,"Erable plane");
+
+        long nom_commun1_id = db.createNom_commun(nom_commun1);
+        long nom_commun2_id = db.createNom_commun(nom_commun2);
+        long nom_commun3_id = db.createNom_commun(nom_commun3);
+        long nom_commun4_id = db.createNom_commun(nom_commun4);
+        long nom_commun5_id = db.createNom_commun(nom_commun5);
+        long nom_commun6_id = db.createNom_commun(nom_commun6);
+        long nom_commun7_id = db.createNom_commun(nom_commun7);
+        long nom_commun8_id = db.createNom_commun(nom_commun8);
+        long nom_commun9_id = db.createNom_commun(nom_commun9);
+        long nom_commun10_id = db.createNom_commun(nom_commun10);
+        long nom_commun11_id = db.createNom_commun(nom_commun11);
+        long nom_commun12_id = db.createNom_commun(nom_commun12);
+        long nom_commun13_id = db.createNom_commun(nom_commun13);
+        long nom_commun14_id = db.createNom_commun(nom_commun14);
+        long nom_commun15_id = db.createNom_commun(nom_commun15);
+        long nom_commun16_id = db.createNom_commun(nom_commun16);
+        long nom_commun17_id = db.createNom_commun(nom_commun17);
+        long nom_commun18_id = db.createNom_commun(nom_commun18);
+        long nom_commun19_id = db.createNom_commun(nom_commun19);
+        long nom_commun20_id = db.createNom_commun(nom_commun20);
+        long nom_commun21_id = db.createNom_commun(nom_commun21);
+        long nom_commun22_id = db.createNom_commun(nom_commun22);
+        long nom_commun23_id = db.createNom_commun(nom_commun23);
+        long nom_commun24_id = db.createNom_commun(nom_commun24);
+        long nom_commun25_id = db.createNom_commun(nom_commun25);
+        long nom_commun26_id = db.createNom_commun(nom_commun26);
+        long nom_commun27_id = db.createNom_commun(nom_commun27);
+
+
+
         type_botanique type_botanique1 = new type_botanique(1, "Arbre");
         type_botanique type_botanique2 = new type_botanique(2, "Arbuste");
 
         long type_botanique1_id = db.createType_botanique(type_botanique1);
         long type_botanique2_id = db.createType_botanique(type_botanique2);
-
-
-
 
         autre_element ae1 = new autre_element(1, "Bob", "Moche", "C'est doux et moelleux");
         autre_element ae2 = new autre_element(2, "John", "Beau", "Ca pue grave");
