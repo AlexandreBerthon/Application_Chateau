@@ -27,6 +27,7 @@ import com.example.alexandre.list.fragments.MapFragment;
 import com.example.alexandre.list.fragments.TreeListFragment;
 import com.example.alexandre.list.helper.databasehelper;
 import com.example.alexandre.list.model.autre_element;
+import com.example.alexandre.list.model.element_botanique;
 import com.example.alexandre.list.model.feuillage;
 import com.example.alexandre.list.model.genre;
 import com.example.alexandre.list.model.lieu;
@@ -34,6 +35,8 @@ import com.example.alexandre.list.model.nom;
 import com.example.alexandre.list.model.type_botanique;
 
 import java.util.List;
+
+import static java.util.logging.Logger.global;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, TreeListFragment.OnTreeListClickListener, MapFragment.OnMapClickListener{
 
@@ -48,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToogle;
     databasehelper db;
+    public static double posx;
+    public static double posy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -256,6 +261,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.d("Description", ae.getDescription_autre_element());
             Log.d("Vue", ae.getVue_sur_autre_element());
         }
+
+        element_botanique eb1 = new element_botanique(1,1,1,1,1,1,1,1,1,1,1,"Oui",45.210308,5.659324,"","","","",true);
+
+        long eb1_id = db.createElementBotanique(eb1);
+
+
+
+        posx = eb1.getPosx_element_botanique();
+        posy = eb1.getPosy_element_botanique();
+
+
+
+
 
 
         db.closeDB();

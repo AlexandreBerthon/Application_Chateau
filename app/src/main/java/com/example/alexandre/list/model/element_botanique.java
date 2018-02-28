@@ -17,8 +17,8 @@ public class element_botanique {
     private int hauteur_element_botanique;
     private int annee_plantation_element_botanique;
     private String remarque_element_botanique;
-    private float posx_element_botanique;
-    private float posy_element_botanique;
+    private double posx_element_botanique;
+    private double posy_element_botanique;
     private String photo_element_botanique;
     private String texte_presentation_element_botanique;
     private String vue_element_botanique;
@@ -28,7 +28,7 @@ public class element_botanique {
     public element_botanique() {
     }
 
-    public element_botanique(int id_element_botanique, int id_type, int id_nom_commun, int id_feuillage, int id_nom, int id_lieu, int id_genre, int perimetre_element_botanique, int diametre_element_botnanique, int hauteur_element_botanique, int annee_plantation_element_botanique, String remarque_element_botanique, float posx_element_botanique, float posy_element_botanique, String photo_element_botanique, String texte_presentation_element_botanique, String vue_element_botanique, String audio_element_botanique, boolean est_une_info) {
+    public element_botanique(int id_element_botanique, int id_type, int id_nom_commun, int id_feuillage, int id_nom, int id_lieu, int id_genre, int perimetre_element_botanique, int diametre_element_botnanique, int hauteur_element_botanique, int annee_plantation_element_botanique, String remarque_element_botanique, double posx_element_botanique, double posy_element_botanique, String photo_element_botanique, String texte_presentation_element_botanique, String vue_element_botanique, String audio_element_botanique, boolean est_une_info) {
         this.id_element_botanique = id_element_botanique;
         this.id_type = id_type;
         this.id_nom_commun = id_nom_commun;
@@ -132,7 +132,7 @@ public class element_botanique {
         this.remarque_element_botanique = remarque_element_botanique;
     }
 
-    public float getPosx_element_botanique() {
+    public double getPosx_element_botanique() {
         return posx_element_botanique;
     }
 
@@ -140,7 +140,7 @@ public class element_botanique {
         this.posx_element_botanique = posx_element_botanique;
     }
 
-    public float getPosy_element_botanique() {
+    public double getPosy_element_botanique() {
         return posy_element_botanique;
     }
 
