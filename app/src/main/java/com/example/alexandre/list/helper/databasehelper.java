@@ -660,7 +660,7 @@ public class databasehelper extends SQLiteOpenHelper{
         ContentValues values = new ContentValues();
         values.put(KEY_LIBELLE_NOM, type_botanique.getLibelle_type_botanique());
 
-        long type_botanique_id=0;
+        long type_botanique_id=1;
 
         db.beginTransaction();
         try {
