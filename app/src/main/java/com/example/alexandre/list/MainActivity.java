@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtMap.setOnClickListener(this);
         mBtTreeList.setOnClickListener(this);
 
+
         mMapFragment = MapFragment.newInstance("arg1", "arg2");
         mTreeFragment = TreeListFragment.newInstance("arg1", "arg2");
         loadFragment(mTreeFragment);
@@ -342,6 +343,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mToogle.onOptionsItemSelected(item)) {
             return true;
+
         }
         return super.onOptionsItemSelected(item);
     }
