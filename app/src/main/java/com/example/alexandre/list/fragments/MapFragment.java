@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -145,6 +146,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
+                        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
                         NestedScrollView nestedScrollView = null;
                         nestedScrollView = (NestedScrollView) nestedScrollView.findViewById(R.id.bottom_sheet);
                         nestedScrollView.setVisibility(View.VISIBLE);
