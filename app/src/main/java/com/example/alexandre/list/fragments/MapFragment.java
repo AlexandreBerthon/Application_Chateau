@@ -150,7 +150,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                         nestedScrollView.setVisibility(View.VISIBLE);
 
                         return false;
-
                     }
                 }
         );
