@@ -3,9 +3,11 @@ package com.example.alexandre.list.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.alexandre.list.MainActivity;
 import com.example.alexandre.list.R;
@@ -17,6 +19,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
@@ -37,8 +40,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private String mParam1;
     private String mParam2;
 
-    private GoogleMap mGoogleMap;
+    protected GoogleMap mGoogleMap;
     private MapView mMapView;
+
+    private Marker markerTest;
 
     private OnMapClickListener mListener;
 
@@ -134,10 +139,35 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         LatLng castlePos = new LatLng(45.209299, 5.659144);
         LatLng treePos = new LatLng(MainActivity.posx, MainActivity.posy);
         CameraPosition liberty = CameraPosition.builder().target(castlePos).zoom(17)/*.bearing(0).tilt(0)*/.build();
-        mGoogleMap.addMarker(new MarkerOptions().position(treePos).title("Test du cèdre du Liban").snippet("Libani"));
+        markerTest = mGoogleMap.addMarker(new MarkerOptions()
+                .position(treePos)
+                .title("Test du cèdre du Liban")
+                .snippet("Libani"));
         mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(liberty));
         mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+        googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
+        {
+
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                Log.e("NTM ", "NTM NTM NTM");
+                return true;
+            }
+        });
     }
+
+
+
+    /**@Override
+    public boolean onMarkerClick(Marker marker) {
+        if(marker.equals(markerTest)) {
+            Log.e("ENCULÉ", " ENCULÉ ENCULÉ");
+        }
+
+        Log.e("ENCULÉ", " ENCULÉ ENCULÉ");
+        return false;
+    }**/
 
     /**
      * This interface must be implemented by activities that contain this

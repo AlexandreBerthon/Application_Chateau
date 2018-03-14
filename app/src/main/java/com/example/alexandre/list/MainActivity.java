@@ -1,16 +1,13 @@
 package com.example.alexandre.list;
 
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,9 +28,6 @@ import com.example.alexandre.list.model.lieu;
 import com.example.alexandre.list.model.nom;
 import com.example.alexandre.list.model.nom_commun;
 import com.example.alexandre.list.model.type_botanique;
-import com.mahc.custombottomsheetbehavior.BottomSheetBehaviorGoogleMapsLike;
-import com.mahc.custombottomsheetbehavior.MergedAppBarLayout;
-import com.mahc.custombottomsheetbehavior.MergedAppBarLayoutBehavior;
 
 import java.util.List;
 
