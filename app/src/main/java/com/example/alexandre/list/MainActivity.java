@@ -326,11 +326,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         posx = eb1.getPosx_element_botanique();
         posy = eb1.getPosy_element_botanique();
 
-
-
-
-
-
         db.closeDB();
 
         //------------------------------------------------------------------------------------------

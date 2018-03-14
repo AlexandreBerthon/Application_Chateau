@@ -2,16 +2,11 @@ package com.example.alexandre.list.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.alexandre.list.MainActivity;
 import com.example.alexandre.list.R;
@@ -25,8 +20,6 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import static android.webkit.ConsoleMessage.MessageLevel.LOG;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,19 +35,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    protected GoogleMap mGoogleMap;
+    private GoogleMap mGoogleMap;
     private MapView mMapView;
 
-    private Marker markerTest;
-
     private OnMapClickListener mListener;
-
-
 
     public MapFragment() {
         // Required empty public constructor
@@ -95,7 +83,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         bindViews(view, savedInstanceState);
         return view;
     }
-
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed() {
@@ -149,35 +136,26 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         LatLng castlePos = new LatLng(45.209299, 5.659144);
         LatLng treePos = new LatLng(MainActivity.posx, MainActivity.posy);
         CameraPosition liberty = CameraPosition.builder().target(castlePos).zoom(17)/*.bearing(0).tilt(0)*/.build();
-        markerTest = mGoogleMap.addMarker(new MarkerOptions()
-                .position(treePos)
-                .title("Test du cèdre du Liban")
-                .snippet("Libani"));
+        Marker marker = mGoogleMap.addMarker(new MarkerOptions()
+                                    .position(treePos)
+                                    .title("Test du cèdre du Liban")
+                                    .snippet("Libani"));
+        marker.hideInfoWindow();
+        mGoogleMap.setOnMarkerClickListener(
+                new GoogleMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(Marker marker) {
+                        NestedScrollView nestedScrollView = null;
+                        nestedScrollView = (NestedScrollView) nestedScrollView.findViewById(R.id.bottom_sheet);
+                        nestedScrollView.setVisibility(View.VISIBLE);
+
+                        return false;
+                    }
+                }
+        );
         mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(liberty));
         mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
-        googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener()
-        {
-
-            @Override
-            public void onInfoWindowClick(Marker marker) {
-                Log.e("PIPI", " et caca");
-                ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
-            }
-        });
     }
-
-
-
-    /**@Override
-    public boolean onMarkerClick(Marker marker) {
-        if(marker.equals(markerTest)) {
-            Log.e("ENCULÉ", " ENCULÉ ENCULÉ");
-        }
-
-        Log.e("ENCULÉ", " ENCULÉ ENCULÉ");
-        return false;
-    }**/
 
     /**
      * This interface must be implemented by activities that contain this
