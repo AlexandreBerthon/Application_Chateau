@@ -2,11 +2,15 @@ package com.example.alexandre.list.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.alexandre.list.MainActivity;
@@ -21,6 +25,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import static android.webkit.ConsoleMessage.MessageLevel.LOG;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,6 +53,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private Marker markerTest;
 
     private OnMapClickListener mListener;
+
+
 
     public MapFragment() {
         // Required empty public constructor
@@ -87,6 +95,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         bindViews(view, savedInstanceState);
         return view;
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed() {
@@ -147,13 +156,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(liberty));
         mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
-        googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
+        googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener()
         {
 
             @Override
-            public boolean onMarkerClick(Marker marker) {
-                Log.e("NTM ", "NTM NTM NTM");
-                return true;
+            public void onInfoWindowClick(Marker marker) {
+                Log.e("PIPI", " et caca");
+                ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
             }
         });
     }
